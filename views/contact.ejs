@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="contactPage">
+        <section>
+            <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies2.org">fmovies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">google map in website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div> -->
+            <!-- <iframe width="520" height="631" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=631&amp;hl=en&amp;q=%20Johannesburg+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://add-map.com/'>adding a google map to website</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=149f1d6f818aa7cb486dad27a05d9db23377585e'></script> -->
+            <!-- <div id="googleMap" style="width:100%;height:400px;"></div> -->
+           <div>
+            <iframe width="100%" height="497" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=589&amp;height=417&amp;hl=en&amp;q=41%20juta%20street%20braamfontein%20%20Johannesburg+(web%20param%20)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> 
+            <a href='https://add-map.com/'>adding a google map to website</a>
+           </div> 
+           
+        </section>
+        <section>
+            <div class="formDiv">
+                <small><h5>team@webparam.co.za | 011 083 5479</h5></small>
+                <form class="row g-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your Name">
+                      </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+        </section>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/scripts.ejs') %>
+    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=21603150b7919736c4728951bf9b48d16f437fa7'></script>
+    
+</body>
+</html>

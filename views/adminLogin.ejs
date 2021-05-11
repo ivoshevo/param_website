@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div style="width: 20%;">
+        <form class="row g-3" action="" method="POST">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a href="/adminRegister" class="btn btn-primary">Register</a>
+            </div>
+        </form>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/scripts.ejs') %>
+</body>
+</html>

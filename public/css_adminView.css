@@ -1,0 +1,4 @@
+.flex-container-AdminView {
+  display: flex;
+  flex-direction: column;
+}

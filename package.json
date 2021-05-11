@@ -1,0 +1,30 @@
+{
+  "name": "webparam",
+  "version": "1.0.0",
+  "description": "company website ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "v14.15.4"
+  },
+  "keywords": [
+    "Web",
+    "Param",
+    "Solutions"
+  ],
+  "author": "ivo@webparam.org",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.7",
+    "nodemon": "^2.0.7"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="flex-container-AdminView">
+        <h2>admin veiw page</h2>
+        <section>
+            <% data.forEach(d => { %>
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: 2%;">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= d.title%></h5>
+                          <p class="card-text" style="font-size: medium"><%= d.description%></p>
+                            
+                             
+                            <form class="row g-3" action="/adminDelete" method="POST">
+                              <input type="hidden" name="id" value="<%= d._id %>" />
+                              <div>
+                                <a href="/adminEdit/<%= d._id %>"  class="btn btn-warning" >Edit!</a>
+                                <button type="submit" class="btn btn-primary">Delete Post</button>
+                            </div>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+           <% })%>
+        </section>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/scripts.ejs') %>
+</body>
+</html>

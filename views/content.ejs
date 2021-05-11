@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="grid-container-blog flex-container-blog block-display">
+        <section class="section text-center">
+            <h2>Blog</h2>
+              
+            <div class="d-inline-block px-1 tag bg-green mx-1" style="font-size: medium;">
+                <small>business</small>
+            </div>
+            <div class="d-inline-block px-1 tag bg-blue mx-1" style="font-size: medium;">
+                <small>technology</small>
+            </div>
+            <div class="d-inline-block px-1 tag bg-purp mx-1" style="font-size: medium;">
+                <small>design</small>
+            </div>
+            <div class="mt-5" style="font-size: medium; margin-bottom: 5%;">
+                [<a href="https://www.instagram.com/officialwebparam/" target="_blank" rel="noopener noreferrer">
+                    instagram
+                </a>] 
+                [<a href="https://www.instagram.com/officialwebparam/" target="_blank" rel="noopener noreferrer">
+                    twitter
+                </a>]
+                [<a href="https://dev.to/teamparam" target="_blank" rel="noopener noreferrer">
+                    dev.to
+                </a>]
+                [<a href="https://medium.com/" target="_blank" rel="noopener noreferrer">
+                    medium
+                </a>]
+            </div>
+            <div class="grid-container-blog-div-1">
+                <section style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <% data.forEach(d => { %>
+                          <div class="card flex-car" style="width: 20rem; font-size:medium; margin-right: 10px;">
+                            <img  src="wire.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title flex-car-text" style="font-size: small;"><%= d.title%></h5>
+                              <p class="card-text flex-car-text" style="font-size: small;" ><%= d.description%></p>
+                              <a href="/contentDetails/<%= d._id%>" class="btn btn-primary" style="font-size: x-small;">Read More</a>
+                            </div>
+                          </div>
+                   <% })%>
+                </section>
+            </div>
+        </section>
+        <section class="section text-center">
+            <h2>Research</h2>
+              
+            <div class="d-inline-block px-1 tag bg-green mx-1" style="font-size: medium;">
+                <small>business</small>
+            </div>
+            <div class="d-inline-block px-1 tag bg-blue mx-1" style="font-size: medium;">
+                <small>technology</small>
+            </div>
+            <div class="d-inline-block px-1 tag bg-purp mx-1" style="font-size: medium;">
+                <small>design</small>
+            </div>
+            <div class="mt-5" style="font-size: medium; margin-bottom: 5%;">
+                [<a href="https://www.instagram.com/officialwebparam/" target="_blank" rel="noopener noreferrer">
+                    instagram
+                </a>] 
+                [<a href="https://www.instagram.com/officialwebparam/" target="_blank" rel="noopener noreferrer">
+                    twitter
+                </a>]
+                [<a href="https://dev.to/teamparam" target="_blank" rel="noopener noreferrer">
+                    dev.to
+                </a>]
+                [<a href="https://medium.com/" target="_blank" rel="noopener noreferrer">
+                    medium
+                </a>]
+            </div>
+            <div>
+                <h2 class="my-3"><%= data.description%></h2>
+            </div>
+        </section>
+        <section class="section text-center">
+            <h2>Videos</h2>
+              
+            <div class="d-inline-block px-1 tag bg-green mx-1"  style="font-size: medium;">
+                <small>business</small>
+            </div>
+            <div class="d-inline-block px-1 tag bg-blue mx-1"  style="font-size: medium;">
+                <small>technology</small>
+            </div>
+            <div class="d-inline-block px-1 tag bg-purp mx-1"  style="font-size: medium;">
+                <small>design</small>
+            </div>
+            <div class="mt-5" style="font-size: medium; margin-bottom: 5%;">
+                [<a href="https://www.instagram.com/officialwebparam/" target="_blank" rel="noopener noreferrer">
+                    instagram
+                </a>] 
+                [<a href="https://www.instagram.com/officialwebparam/" target="_blank" rel="noopener noreferrer">
+                    twitter
+                </a>]
+                [<a href="https://dev.to/teamparam" target="_blank" rel="noopener noreferrer">
+                    dev.to
+                </a>]
+                [<a href="https://medium.com/" target="_blank" rel="noopener noreferrer">
+                    medium
+                </a>]
+            </div>
+            <div>
+                <h2 class="my-3">The team is at work to get Video content out to you.</h2>
+            </div>
+        </section>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/scripts.ejs') %>
+</body>
+</html>

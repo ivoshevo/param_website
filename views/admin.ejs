@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="grid-container-admin">
+        <section class="container">
+            <h1 class="mb-4">New Content</h1>
+            <form class="row g-3" action="/content" method="POST">
+                <%- include('./partials/form_fields.ejs') %>
+            </form>
+        </section>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/scripts.ejs') %>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.section {
+  padding: 5% 10%;
+}
+.grid-container-careers {
+  display: grid;
+  justify-content: center;
+}
+.text-center {
+  text-align: center !important;
+}
+section div div h4 {
+  font-weight: 300;
+}
+section div div p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
