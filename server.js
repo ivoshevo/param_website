@@ -13,10 +13,13 @@ helmet();
 mongoose.Promise = global.Promise;
 async function dbConect() {
   try {
-    const dbConnection = await mongoose.connect(process.env.DB_CONNECTION, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const dbConnection = await mongoose.connect(
+      "mongodb://localhost:27017/webparam",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    );
     if (dbConnection) {
       console.log("Data Base Connected");
       const port = process.env.PORT || 4000;
