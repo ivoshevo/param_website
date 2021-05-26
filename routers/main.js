@@ -87,12 +87,12 @@ router.get("/editContent", (req, res) => {
   res.render("editContent");
 });
 router.post("/adminEdit", async (req, res) => {
-  const { id, title, description } = req.body;
+  const { id, title, description, summary, vid, img } = req.body;
   try {
     const contents = await Content.findByIdAndUpdate(
       { _id: id },
       {
-        $set: { title, description },
+        $set: { title, description, summary, vid, img },
       },
       { new: true }
     );
@@ -133,7 +133,9 @@ router.get("/contentDetails/:id", async (req, res) => {
   try {
     const content = await Content.find({ _id: req.params.id });
     const detail = content[0].description;
-    res.render("contentDetails", { detail, title: "More Details" });
+    const vid = content[0].vid;
+    const img = content[0].img;
+    res.render("contentDetails", { detail, vid, img, title: "More Details" });
   } catch (err) {
     console.log(err.message);
   }
@@ -150,8 +152,8 @@ router.get("/contact", (req, res) => {
 
 // --- POST ---
 router.post("/content", async (req, res) => {
-  const { title, description } = req.body;
-  const content = new Content({ title, description });
+  const { title, description, summary, vid, img } = req.body;
+  const content = new Content({ title, description, summary, vid, img });
 
   try {
     const contentData = await content.save();

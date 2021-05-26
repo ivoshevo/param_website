@@ -12,7 +12,10 @@
                       <div class="card">
                         <div class="card-body">
                           <h5 class="card-title"><%= d.title%></h5>
+                          <p class="card-text" style="font-size: medium"><%= d.summary%></p>
                           <p class="card-text" style="font-size: medium"><%= d.description%></p>
+                          <p><img src="<%= d.img %>" class="card-img" alt="..." style="width: 20%; height: 20%;"></p>
+                          <iframe width="20%" height="200" src="<%= d.vid %>"> </iframe>
                             
                              
                             <form class="row g-3" action="/adminDelete" method="POST">

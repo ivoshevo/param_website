@@ -49,8 +49,8 @@
             </div>
         </div>
     </nav>
-    <div>
-        <div>Edit...</div>
+    <div style="margin: 5%;">
+    <div><h5>Edit Content</h5></div>
     <form class="row g-3" action="/adminEdit" method="POST">  
     <% contents.forEach( content => { %>
         <input type="hidden" name="id" value="<%= content._id %>" />
@@ -58,11 +58,23 @@
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" required placeholder="Title" value="<%=content.title%>">
           </div>
+          <div class="mb-3">
+            <label for="summary" class="form-label">Summary</label>
+            <textarea class="form-control" id="summary" name="summary" placeholder="Summary"> <%=content.summary%></textarea>
+          </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <textarea class="form-control" id="description" name="description" placeholder="Content" rows="10">
                 <%=content.description%>
             </textarea>
+          </div>
+          <div class="mb-3">
+            <label for="img" class="form-label">Image</label>
+            <input type="text" class="form-control" id="img" name="img" required placeholder="Image" value="<%=content.img%>">
+          </div>
+          <div class="mb-3">
+            <label for="vid" class="form-label">Video</label>
+            <input type="text" class="form-control" id="vid" name="vid" required placeholder="Video" value="<%=content.vid%>">
           </div>
         <div>
             <a href="/content" class="btn btn-secondary">Cancle</a>

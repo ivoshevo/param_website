@@ -5,9 +5,19 @@ const contentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  summary: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
     required: true,
+  },
+  img: {
+    type: String,
+  },
+  vid: {
+    type: String,
   },
   createdAt: {
     type: Date,
