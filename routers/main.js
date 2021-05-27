@@ -8,6 +8,33 @@ const auth = require("../middleware/auth");
 
 const router = express.Router();
 
+//--- PASSWORD RESET ---
+
+router.get("/resetPassword", (req, res) => {
+  res.render("resetPassword", { title: "Password Reset" });
+});
+
+router.post("/resetPassword", async (req, res) => {
+  const { email, password, ConfirmPassword } = req.body;
+  if (password === ConfirmPassword) {
+    try {
+      const user = await AdminUser.findOne({ email });
+      const salt = await bcrypt.genSalt(10);
+      const newPassword = await bcrypt.hash(password, salt);
+      const updatedUser = await AdminUser.findOneAndUpdate(
+        user.password,
+        { $set: { password: newPassword } },
+        { new: true }
+      );
+      res.redirect(308, "/adminLogin");
+    } catch (err) {
+      console.log(err.message);
+    }
+  } else {
+    res.render("resetPassword");
+  }
+});
+
 // --- LOGIN ---
 
 router.get("/adminLogin", (req, res) => {
@@ -16,16 +43,11 @@ router.get("/adminLogin", (req, res) => {
 router.post("/adminLogin", async (req, res) => {
   try {
     const user = await AdminUser.findOne({ email: req.body.email });
-    if (!user) return res.redirect(401, "/adminRegister");
-    try {
-      const validUser = await bcrypt.compare(req.body.password, user.password);
-      if (!validUser) return res.redirect(401, "/adminRegister");
-      const token = jwt.sign({ _id: validUser._id }, "webparamJwtPrivateKey");
-      // console.log(token);
-      res.header("x-auth-token", token).redirect(302, "/adminView");
-    } catch (err) {
-      console.log(err.message);
-    }
+    if (!user) return res.redirect(302, "/adminRegister");
+    const result = await bcrypt.compare(req.body.password, user.password);
+    console.log(result);
+    if (!result) return res.redirect(302, "/resetPassword");
+    return res.redirect(302, "/admin");
   } catch (err) {
     console.log(err.message);
   }

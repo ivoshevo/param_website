@@ -13,7 +13,7 @@ helmet();
 mongoose.Promise = global.Promise;
 async function dbConect() {
   try {
-    const dbConnection = await mongoose.connect(process.env.DB_CONNECTION, {
+    const dbConnection = await mongoose.connect(process.env.DB_Local, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
